@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "lodash-node": "^3.0.1",
-    "soap": "^0.6.1"
+    "soap": "^0.6.1",
+    "forever": "latest"
   },
   "devDependencies": {},
   "scripts": {
