@@ -1,9 +1,18 @@
 var soap = require('soap');
-  var url = 'http://localhost:8000/APServiceService?wsdl';
-  var args = {name: 'value'};
-  soap.createClient(url, function(err, client) {
-      console.log(client.describe() )
-      client.APServiceService.IfAPService.DeptBinding(args, function(err, header, result, a) {
-          console.log(err, header, result, a);
-      });
+var url = 'http://localhost:8000/?wsdl';
+var args = {};
+soap.createClient(url, function (err, client) {
+  console.log(client.describe())
+  client.DeptBinding(args, function (err, result, xml) {
+    if (err) throw err;
+    console.log(result, xml);
   });
+  client.corpBinding(args, function (err, result, xml) {
+    if (err) throw err;
+    console.log(result, xml);
+  });
+  client.staffBinding(args, function (err, result, xml) {
+    if (err) throw err;
+    console.log(result, xml);
+  });
+});
