@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ap.eidc.huawei.com/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ap.eidc.huawei.com/" xmlns:intf="http://ap.eidc.huawei.com/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="corpBindingResponse">
+
+      <wsdl:part name="corpBindingReturn" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="corpBindingRequest">
+
+      <wsdl:part name="CorpBindReq" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="staffBindingRequest">
+
+      <wsdl:part name="StaffBindReq" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="staffBindingResponse">
+
+      <wsdl:part name="staffBindingReturn" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeptBindingRequest">
+
+      <wsdl:part name="DeptBindReq" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="DeptBindingResponse">
+
+      <wsdl:part name="DeptBindingReturn" type="soapenc:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="APService">
+
+      <wsdl:operation name="DeptBinding" parameterOrder="DeptBindReq">
+
+         <wsdl:input message="impl:DeptBindingRequest" name="DeptBindingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:DeptBindingResponse" name="DeptBindingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="corpBinding" parameterOrder="CorpBindReq">
+
+         <wsdl:input message="impl:corpBindingRequest" name="corpBindingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:corpBindingResponse" name="corpBindingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="staffBinding" parameterOrder="StaffBindReq">
+
+         <wsdl:input message="impl:staffBindingRequest" name="staffBindingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:staffBindingResponse" name="staffBindingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IfAPServiceSoapBinding" type="impl:APService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="DeptBinding">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DeptBindingRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DeptBindingResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="corpBinding">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="corpBindingRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="corpBindingResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="staffBinding">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="staffBindingRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="staffBindingResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ap.eidc.huawei.com/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="APServiceService">
+
+      <wsdl:port binding="impl:IfAPServiceSoapBinding" name="IfAPService">
+
+         <wsdlsoap:address location="http://211.138.218.198:8080/sms/services/IfAPService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
