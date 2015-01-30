@@ -27,5 +27,6 @@ var xml = require('fs').readFileSync('IfAPService.wsdl', 'utf8'),
     response.end("404: Not Found: " + request.url)
   });
 
-server.listen(8000);
+var port = Number(process.env.PORT || 5000);
+server.listen(port);
 soap.listen(server, '/', myService, xml);

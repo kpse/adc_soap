@@ -155,7 +155,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:IfAPServiceSoapBinding" name="IfAPService">
 
-         <wsdlsoap:address location="http://localhost:8000/"/>
+         <wsdlsoap:address location="https://adc-soap.herokuapp.com/"/>
 
       </wsdl:port>
 
