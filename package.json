@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "forever": "latest",
     "lodash-node": "^3.0.1",
-    "soap": "^0.6.1",
-    "forever": "latest"
+    "soap": "^0.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.3.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
